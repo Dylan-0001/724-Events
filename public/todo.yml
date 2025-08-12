@@ -21,3 +21,4 @@ CONTACT:
 
 REALISATIONS:
   - Patch system de filtre en créant une list "filteredTypes" en filtrant par type et en modifiant la list de base pour quelle fasse la pagination sur cette nouvelle list
+  - [HELP] Dans events.json les dates des events ne correspondent pas aux periodes, demander si je dois les changer à la main ou si ont s'en tape
