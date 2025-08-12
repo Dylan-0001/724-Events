@@ -13,7 +13,14 @@ import Modal from "../../containers/Modal";
 import { useData } from "../../contexts/DataContext";
 
 const Page = () => {
-  const {last} = useData()
+  const {data} = useData()
+
+  const lastEvents = data?.events
+      ? [...data.events].sort((evtA, evtB) => new Date(evtA.date) > new Date(evtB.date) ? -1 : 1)
+      : [];
+
+  const last = lastEvents[0];
+
   return <>
     <header>
       <Menu />
@@ -22,7 +29,7 @@ const Page = () => {
       <section className="SliderContainer">
         <Slider />
       </section>
-      <section className="ServicesContainer">
+      <section className="ServicesContainer" id="nos-services">
         <h2 className="Title">Nos services</h2>
         <p>Nous organisons des événements sur mesure partout dans le monde</p>
         <div className="ListContainer">
@@ -51,11 +58,11 @@ const Page = () => {
           </ServiceCard>
         </div>
       </section>
-      <section className="EventsContainer">
+      <section className="EventsContainer" id="nos-realisations">
         <h2 className="Title">Nos réalisations</h2>
         <EventList />
       </section>
-      <section className="PeoplesContainer">
+      <section className="PeoplesContainer" id="notre-equipe">
         <h2 className="Title">Notre équipe</h2>
         <p>Une équipe d’experts dédiés à l’ogranisation de vos événements</p>
         <div className="ListContainer">
@@ -91,34 +98,36 @@ const Page = () => {
           />
         </div>
       </section>
-      <div className="FormContainer" id="contact">
-        <h2 className="Title">Contact</h2>
-        <Modal
-          Content={
-            <div className="ModalMessage--success">
-              <div>Message envoyé !</div>
-              <p>
-                Merci pour votre message nous tâcherons de vous répondre dans
-                les plus brefs délais
-              </p>
-            </div>
-          }
-        >
-          {({ setIsOpened }) => (
-            <Form
-              onSuccess={() => setIsOpened(true)}
-              onError={() => null}
-            />
-          )}
-        </Modal>
-      </div>
+      <section id="contact">
+        <div className="FormContainer">
+          <h2 className="Title">Contact</h2>
+          <Modal
+              Content={
+                <div className="ModalMessage--success">
+                  <div>Message envoyé !</div>
+                  <p>
+                    Merci pour votre message nous tâcherons de vous répondre dans
+                    les plus brefs délais
+                  </p>
+                </div>
+              }
+          >
+            {({ setIsOpened }) => (
+                <Form
+                    onSuccess={() => setIsOpened(true)}
+                    onError={() => null}
+                />
+            )}
+          </Modal>
+        </div>
+      </section>
     </main>
     <footer className="row">
       <div className="col presta">
         <h3>Notre derniére prestation</h3>
         <EventCard
-          imageSrc={last?.cover}
-          title={last?.title}
+          imageSrc={`${last?.cover ?  last?.cover : ""}`}
+          title={`${last?.title ?  last?.title : ""}`}
           date={new Date(last?.date)}
           small
           label="boom"

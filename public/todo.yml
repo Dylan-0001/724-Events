@@ -1,0 +1,23 @@
+HTML:
+  - Patch navigation header (ajout des id au sections)
+  - Ajout balise section pour div contact
+
+SLIDER:
+  - Patch Slider (image null => ca comptais 4 images et non 3)
+  - Patch Slider bullet (ne bouger pas)
+  - Patch mauvaise date (il fallait mettre -1 dans le getMonth() car la liste commence à 0)
+  - Patch problème de key non unique à chaque composant de la map
+  - Ajout d'une sécurité pour toujours initialiser la map byDateDesc
+
+FOOTER:
+  - creation de la list events avec trie du plus nouveau au plus ancien
+  - creation de la const last qui prend le premier element de la list events trié
+  - Patch Image last event
+  - add verification pour éviter toutes erreur de valeur indefined pour le imageURL et le title
+
+CONTACT:
+  - Patch de la modal qui ne s'afficher pas quand le message était envoyer
+  - Ajout d'un shadow à la modal pour quelle ressorte un peu plus
+
+REALISATIONS:
+  - Patch system de filtre en créant une list "filteredTypes" en filtrant par type et en modifiant la list de base pour quelle fasse la pagination sur cette nouvelle list
