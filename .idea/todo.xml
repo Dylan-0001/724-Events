@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="TodoService">
-    <task text="test" done="true">
-      <task text="qzd" done="true" />
-    </task>
+    <task id="1ac6100b-f588-43d7-8b35-5ab8ec7d8d82" text="Slider bullet point" status="TODO" priority="URGENT" type="BUG" autoDetected="true" description="Je dois pouvoir naviguer grace au bullet point" createdDate="2025-08-12T13:28:20.8787593" />
   </component>
 </project>

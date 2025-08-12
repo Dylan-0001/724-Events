@@ -8,6 +8,8 @@ SLIDER:
   - Patch mauvaise date (il fallait mettre -1 dans le getMonth() car la liste commence à 0)
   - Patch problème de key non unique à chaque composant de la map
   - Ajout d'une sécurité pour toujours initialiser la map byDateDesc
+  - Patch des bullets points pour la navigations entre les images du slider
+  - Revue du TimeOut pour éviter toute duplication en cas de navigation manuel
 
 FOOTER:
   - creation de la list events avec trie du plus nouveau au plus ancien
