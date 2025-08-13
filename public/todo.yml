@@ -1,6 +1,7 @@
 HTML:
   - Patch navigation header (ajout des id au sections)
   - Ajout balise section pour div contact
+  - Ajout d'un title au site
 
 SLIDER:
   - Patch Slider (image null => ca comptais 4 images et non 3)

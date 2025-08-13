@@ -32,7 +32,7 @@ const Select = ({
             <>
               {!titleEmpty && (
                 <li onClick={() => changeValue(null)}>
-                  <input defaultChecked={!value} name="selected" type="radio" />{" "}
+                  <input defaultChecked={!value} name="selected" type="radio" required/>{" "}
                   Toutes
                 </li>
               )}
@@ -42,6 +42,7 @@ const Select = ({
                     defaultChecked={value === s}
                     name="selected"
                     type="radio"
+                    required
                   />{" "}
                   {s}
                 </li>
@@ -49,7 +50,7 @@ const Select = ({
             </>
           )}
         </ul>
-        <input type="hidden" value={value || ""} name={name} />
+        <input type="hidden" value={value || ""} name={name} required/>
         <button
           type="button"
           data-testid="collapse-button-testid"
